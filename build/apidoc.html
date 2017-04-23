@@ -1,0 +1,149 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/palantir/grunt-tslint"
+
+    >grunt-tslint (v5.0.1)</a>
+</h1>
+<h4>Grunt plugin for TypeScript Linter.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-tslint">module grunt-tslint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-tslint.grunt-tslint">
+            function <span class="apidocSignatureSpan"></span>grunt-tslint
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.grunt-tslint" id="apidoc.module.grunt-tslint">module grunt-tslint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.grunt-tslint.grunt-tslint" id="apidoc.element.grunt-tslint.grunt-tslint">
+        function <span class="apidocSignatureSpan"></span>grunt-tslint
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">grunt-tslint = function (grunt) {
+    grunt.loadNpmTasks(&#x22;grunt-contrib-clean&#x22;);
+    grunt.loadNpmTasks(&#x22;grunt-eslint&#x22;);
+    grunt.loadNpmTasks(&#x22;grunt-mocha-test&#x22;);
+
+    grunt.initConfig({
+        eslint: {
+            target: [
+                &#x22;Gruntfile.js&#x22;,
+                &#x22;tasks/*.js&#x22;,
+            ],
+        },
+
+        tslint: {
+            errors: {
+                options: {
+                    configuration: &#x22;tslint.json&#x22;,
+                    force: true,
+                },
+                files: {
+                    src: [
+                        &#x22;test/fixtures/correctFile.ts&#x22;,
+                        &#x22;test/fixtures/errorFile1.ts&#x22;,
+                        &#x22;test/fixtures/errorFile2.ts&#x22;,
+                    ],
+                },
+            },
+        },
+
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: &#x22;spec&#x22;,
+                    quiet: false,
+                    log: true,
+                },
+                src: [&#x22;test/tasks/**/*.js&#x22;],
+            },
+        },
+    });
+
+    // actually load this plugin&#x27;s task(s)
+    grunt.loadTasks(&#x22;tasks&#x22;);
+
+    // by default, lint and run all tests
+    grunt.registerTask(&#x22;default&#x22;, [&#x22;eslint&#x22;, &#x22;test&#x22;]);
+
+    // run unit tests
+    grunt.registerTask(&#x22;test&#x22;, [&#x22;mochaTest&#x22;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
